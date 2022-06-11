@@ -20,4 +20,10 @@ describe('AsideMenuComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+  const masterName = 'menu';
+
+  it('parent should parse input', () => {
+    expect(component).toContain(masterName);
+  });
 });
