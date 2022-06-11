@@ -1,0 +1,136 @@
+
+aside{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+
+    background:#333;
+    color:#fff;
+    position:absolute;
+    right: 0;
+    top: 0;
+    width: 100vw;
+    @media screen and (min-width:768px) {
+        width: 90vw;
+    }
+    height: 100vh;
+    transform: translateX(100%);
+    -webkit-transform: translateX(100%);
+    -moz-transform: translateX(100%);
+    -ms-transform: translateX(100%);
+    -o-transform: translateX(100%);
+    transition:all 0.2s cubic-bezier(0.215, 0.610, 0.355, 1) ;
+    -webkit-transition:all 0.2s cubic-bezier(0.215, 0.610, 0.355, 1) ;
+    -moz-transition:all 0.2s cubic-bezier(0.215, 0.610, 0.355, 1) ;
+    -ms-transition:all 0.2s cubic-bezier(0.215, 0.610, 0.355, 1) ;
+    -o-transition:all 0.2s cubic-bezier(0.215, 0.610, 0.355, 1) ;
+    .openbutton{
+        background:transparent;
+        color:#333;
+        min-width: 60px;
+        position: absolute;
+        padding: 15px;
+        transform: translateX(-100%);
+        -webkit-transform: translateX(-100%);
+        -moz-transform: translateX(-100%);
+        -ms-transform: translateX(-100%);
+        -o-transform: translateX(-100%);
+        transition:all 0.2s cubic-bezier(0.215, 0.610, 0.355, 1) 0.1s ;
+        -webkit-transition:all 0.2s cubic-bezier(0.215, 0.610, 0.355, 1) 0.1s ;
+        -moz-transition:all 0.2s cubic-bezier(0.215, 0.610, 0.355, 1) 0.1s ;
+        -ms-transition:all 0.2s cubic-bezier(0.215, 0.610, 0.355, 1) 0.1s ;
+        -o-transition:all 0.2s cubic-bezier(0.215, 0.610, 0.355, 1) 0.1s ;
+    }
+    .closebutton{
+        opacity: 0;
+        padding:15px;
+        justify-content: space-between;
+        transform: translateX(100%);
+        -webkit-transform: translateX(100%);
+        -moz-transform: translateX(100%);
+        -ms-transform: translateX(100%);
+        -o-transform: translateX(100%);
+        transition: transform 0.4s cubic-bezier(0.075, 0.82, 0.165, 1) 0.2s, opacity 0.2s cubic-bezier(0.6, -0.28, 0.735, 0.045) 0.1s;
+        -webkit-transition: transform 0.4s cubic-bezier(0.075, 0.82, 0.165, 1) 0.2s, opacity 0.2s cubic-bezier(0.6, -0.28, 0.735, 0.045) 0.1s;
+        -moz-transition: transform 0.4s cubic-bezier(0.075, 0.82, 0.165, 1) 0.2s, opacity 0.2s cubic-bezier(0.6, -0.28, 0.735, 0.045) 0.1s;
+        -ms-transition: transform 0.4s cubic-bezier(0.075, 0.82, 0.165, 1) 0.2s, opacity 0.2s cubic-bezier(0.6, -0.28, 0.735, 0.045) 0.1s;
+        -o-transition: transform 0.4s cubic-bezier(0.075, 0.82, 0.165, 1) 0.2s, opacity 0.2s cubic-bezier(0.6, -0.28, 0.735, 0.045) 0.1s;
+}
+    .closebutton span{
+        margin-right:8px;
+    }
+    .closebutton svg{
+        fill:#333;
+        background:transparent;
+        flex: 0 0 auto;
+        width: 28px;
+        padding: 1px 2px 1px 5px;
+    }
+    &.showmenu{
+        transform: translateX(0%);
+        -webkit-transform: translateX(0%);
+        -moz-transform: translateX(0%);
+        -ms-transform: translateX(0%);
+        -o-transform: translateX(0%);
+        .openbutton{
+            transform: translateX(100%);
+            -webkit-transform: translateX(100%);
+            -moz-transform: translateX(100%);
+            -ms-transform: translateX(100%);
+            -o-transform: translateX(100%);
+            opacity: 0;
+            padding:15px;
+            min-width: 60px;
+            background:#333;
+            color:#fff;
+            }
+            .closebutton{
+                opacity: 1;
+                transform: translateX(0%);
+                -webkit-transform: translateX(0%);
+                -moz-transform: translateX(0%);
+                -ms-transform: translateX(0%);
+                -o-transform: translateX(0%);
+            }
+    }
+
+    nav#main{
+        position:relative;
+        top:0;
+        right:0;
+        padding:25px;
+        @media screen and (min-width:768px) {
+            padding: 45px;
+        }
+
+        flex: 1 1 auto;
+        h3{
+            margin-top: 0;
+            font-size: 23px;
+            @media screen and (min-width:768px) {
+                font-size: 34px;
+            }
+        }
+        ul{
+            padding: 0;
+            list-style: none;
+            li{
+                padding:20px 0 20px 0;
+                border-bottom: 1px solid rgb(200, 200, 200);
+                transition: padding 0.2s ease-out, background 0.4s ease-out;
+                -webkit-transition: padding 0.2s ease-out, background 0.4s ease-out;
+                -moz-transition: padding 0.2s ease-out, background 0.4s ease-out;
+                -ms-transition: padding 0.2s ease-out, background 0.4s ease-out;
+                -o-transition: padding 0.2s ease-out, background 0.4s ease-out;
+                &:hover
+{
+                    background:#fff;
+                    color:#333;
+                    padding-left:20px;
+                }
+            }
+        }
+    }
+    
+}

@@ -1,1 +1,13 @@
 /* You can add global styles to this file, and also import other style files */
+body{
+    overflow: hidden;
+}
+button{
+    padding:5px 15px;
+    border:none;
+    cursor: pointer;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+}
