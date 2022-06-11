@@ -4,11 +4,13 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { AsideMenuComponent } from './aside-menu/aside-menu.component';
+import { RandomSvgBlobComponent } from './random-svg-blob/random-svg-blob.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    AsideMenuComponent
+    AsideMenuComponent,
+    RandomSvgBlobComponent
   ],
   imports: [
     BrowserModule,

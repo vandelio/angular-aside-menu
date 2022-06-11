@@ -21,9 +21,16 @@ describe('AsideMenuComponent', () => {
     expect(component).toBeTruthy();
   });
 
-  const masterName = 'menu';
-
-  it('parent should parse input', () => {
-    expect(component).toContain(masterName);
+  it('should display menu button svg icon', () => {
+    const fixture = TestBed.createComponent(AsideMenuComponent);
+    fixture.detectChanges();
+    const compiled = fixture.nativeElement as HTMLElement;
+    expect(compiled.querySelector('.openbutton')?.innerHTML).toContain('<svg');
+  });
+  it('should display menu item(s)', () => {
+    const fixture = TestBed.createComponent(AsideMenuComponent);
+    fixture.detectChanges();
+    const compiled = fixture.nativeElement as HTMLElement;
+    expect(compiled.querySelector('aside nav#main ul')?.innerHTML).toContain('<li');
   });
 });
