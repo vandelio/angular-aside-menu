@@ -17,17 +17,19 @@ export class RandomSvgBlobComponent {
   centerY: number;
   vertixCountFactor: number;
   pathStyle;
+  complexity: number;
 
   constructor() {
+    this.complexity = 4.2;
     this.vertixCountFactor = 0.6;
-    this.radius = 100;
-    this.angle = 0;
+    this.radius = 140;
+    this.angle = this.getExtraRandom();
     this.centerX = 240;
     this.centerY = 240;
     this.pathStyle = {
       border:'none',
-      fill:'transparent',
-      stroke: 'grey',
+      fill:'#000',
+      stroke: '#000',
       strokeWidth: 2,
       strokeDasharray: "none"
     }
@@ -37,8 +39,8 @@ export class RandomSvgBlobComponent {
 
   generateCoords() {
     for (let i = 0; i < 2*Math.PI; i+=this.vertixCountFactor) {
-      let x = (this.radius*Math.cos(i) + this.centerX) + this.getRandomRadiusModifier();
-      let y = (this.radius*Math.sin(i) + this.centerY) + this.getRandomRadiusModifier();
+      let x = (this.radius*Math.cos(i) + this.centerX) + (this.getRandomRadiusModifier() * this.getExtraRandom());
+      let y = (this.radius*Math.sin(i) + this.centerY) + (this.getRandomRadiusModifier() * this.getExtraRandom());
       this.pathDArray.push({x,y});
       if (i+this.vertixCountFactor >= 2*Math.PI) {
         this.pathDArray.push(this.pathDArray[0])
@@ -46,10 +48,14 @@ export class RandomSvgBlobComponent {
     };
   }
 
+
   getRandomRadiusModifier() {
-    let num = Math.floor(Math.random()*10) + 1;
-    num *= Math.floor(Math.random()*2) == 1 ? 1 : -1;
+    let num = Math.floor(Math.random()*8.2333) + 5.39;
+    num *= Math.floor(Math.random()*8) == 0.2 ? 1 : -1;
     return num
+  }
+  getExtraRandom() {
+    return Math.floor(Math.random()*this.complexity) + 1
   }
 
   catmullRom2bezier() {

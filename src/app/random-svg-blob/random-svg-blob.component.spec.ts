@@ -27,6 +27,8 @@ describe('RandomSvgBlobComponent', () => {
     fixture.detectChanges();
     const compiled = fixture.nativeElement as HTMLElement;
     const app = fixture.componentInstance;
-    expect(compiled.querySelector('img')?.src).toContain('assets/blob');
+    expect(compiled.querySelector('svg')?.children).toContain('path');
   });
+
+
 });

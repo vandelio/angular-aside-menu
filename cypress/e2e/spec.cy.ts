@@ -28,7 +28,12 @@ describe('My First Test', () => {
   it('Click second element in menu list', () => {
     cy.get('li:nth(1)').click()
   })
-  // it('Can click button to close menu', () => {
-  //   cy.get('.closebutton').click()
-  // })
+
+  it('Visits the blob test page', () => {
+    cy.visit('/blob')
+  })
+
+  it('should have path in svg', () => {
+    cy.get('svg').find('path').should('be.visible')
+  })
 })
