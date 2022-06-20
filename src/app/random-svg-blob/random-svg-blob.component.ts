@@ -21,20 +21,24 @@ export class RandomSvgBlobComponent {
 
   constructor() {
     this.complexity = 4.2;
-    this.vertixCountFactor = 0.6;
+    this.vertixCountFactor = 0.7;
     this.radius = 140;
     this.angle = this.getExtraRandom();
     this.centerX = 240;
     this.centerY = 240;
     this.pathStyle = {
       border:'none',
-      fill:'#000',
-      stroke: '#000',
+      fill:'#1676d4',
+      stroke: '#1676d4',
       strokeWidth: 2,
       strokeDasharray: "none"
     }
     this.resetPathData();
-    this.generateCurvyShape();
+
+    this.generateCurvyShape()
+    setInterval(()=>{
+      this.generateCurvyShape()
+    },Math.floor(Math.random() * (10000 - 4000 + 1)) + 4000);
   }
 
   generateCoords() {
@@ -55,7 +59,7 @@ export class RandomSvgBlobComponent {
     return num
   }
   getExtraRandom() {
-    return Math.floor(Math.random()*this.complexity) + 1
+    return Math.floor(Math.random()*this.complexity) * 2
   }
 
   catmullRom2bezier() {
@@ -112,9 +116,11 @@ export class RandomSvgBlobComponent {
   };
 
   generateCurvyShape() {
+    console.log('generateCurvyShape');
     this.resetPathData();
     this.generateCoords();
     this.drawCurvyShape();
+
   };
 
   randomizeStyle() {

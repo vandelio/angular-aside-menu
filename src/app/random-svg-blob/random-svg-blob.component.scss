@@ -2,7 +2,14 @@
     width: 100vw;
     height: 100vh;
 }
-svg{
-  fill:#333;
-  stroke: #333;
+svg path {
+  transition: 0.8s cubic-bezier(0.79, 0, 0.19, 0.98);
+  -webkit-transition: 0.8s cubic-bezier(0.79, 0, 0.19, 0.98);
+  -moz-transition: 0.8s cubic-bezier(0.79, 0, 0.19, 0.98);
+  -ms-transition: 0.8s cubic-bezier(0.79, 0, 0.19, 0.98);
+  -o-transition: 0.8s cubic-bezier(0.79, 0, 0.19, 0.98);
+}
+button{
+  position: absolute;
+  bottom: 0;
 }

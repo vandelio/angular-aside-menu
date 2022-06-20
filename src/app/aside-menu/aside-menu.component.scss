@@ -30,6 +30,7 @@ aside{
         background:transparent;
         min-width: 60px;
         position: absolute;
+        top: 20px;
         padding: 15px;
         transform: translateX(-100%) scale(1);
         -webkit-transform: translateX(-100%) scale(1);
@@ -43,13 +44,14 @@ aside{
         -o-transition:all 0.2s cubic-bezier(0.215, 0.610, 0.355, 1) 0.1s ;
         .buttonbg{
             position: absolute;
-            width:300px;
+            width:400px;
+            height:400px;
             z-index: 1;
-            transform: rotate(93deg) translate(-2%, -16%);
-            -webkit-transform: rotate(93deg) translate(-2%, -16%);
-            -moz-transform: rotate(93deg) translate(-2%, -16%);
-            -ms-transform: rotate(93deg) translate(-2%, -16%);
-            -o-transform: rotate(93deg) translate(-2%, -16%);
+            transform: rotate(93deg) translate(-4%, -14%);
+            -webkit-transform: rotate(93deg) translate(-4%, -14%);
+            -moz-transform: rotate(93deg) translate(-4%, -14%);
+            -ms-transform: rotate(93deg) translate(-4%, -14%);
+            -o-transform: rotate(93deg) translate(-4%, -14%);
 }
         svg{
             color:#fff;
@@ -91,16 +93,16 @@ aside{
         -ms-transform: translateX(0%);
         -o-transform: translateX(0%);
         .openbutton{
-            transform: translateX(100%) scale(0);
-            -webkit-transform: translateX(100%) scale(0);
-            -moz-transform: translateX(100%) scale(0);
-            -ms-transform: translateX(100%) scale(0);
-            -o-transform: translateX(100%) scale(0);
-            opacity: 0;
-            padding:15px;
-            min-width: 60px;
-            background:#333;
-            color:#fff;
+            // transform: translateX(100%) scale(0);
+            // -webkit-transform: translateX(100%) scale(0);
+            // -moz-transform: translateX(100%) scale(0);
+            // -ms-transform: translateX(100%) scale(0);
+            // -o-transform: translateX(100%) scale(0);
+            // opacity: 0;
+            // padding:15px;
+            // min-width: 60px;
+            // background:#333;
+            // color:#fff;
 }
         .closebutton{
             opacity: 1;
