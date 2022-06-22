@@ -12,7 +12,15 @@ li{
     text-decoration: none;
   }
 }
+section{
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+}
 h1{
+  pointer-events: none;
   mix-blend-mode: hard-light;
   color:cornflowerblue;
   margin: 0;

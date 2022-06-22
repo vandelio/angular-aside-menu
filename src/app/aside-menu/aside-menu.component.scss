@@ -6,7 +6,7 @@ aside{
     justify-content: space-between;
     align-items: flex-start;
 
-    background:#000;
+    background:rgb(22, 118, 212);
     color:#fff;
     position:absolute;
     right: 0;
@@ -28,10 +28,12 @@ aside{
     -o-transition:all 0.2s cubic-bezier(0.215, 0.610, 0.355, 1) ;
     .openbutton{
         background:transparent;
-        min-width: 60px;
         position: absolute;
-        top: 20px;
-        padding: 15px;
+        top: -4px;
+        overflow: hidden;
+        width: 80px;
+        height: 133px;
+        padding: 24px;
         transform: translateX(-100%) scale(1);
         -webkit-transform: translateX(-100%) scale(1);
         -moz-transform: translateX(-100%) scale(1);
@@ -47,12 +49,13 @@ aside{
             width:400px;
             height:400px;
             z-index: 1;
+            fill:rgb(22, 118, 212);
             transform: rotate(93deg) translate(-4%, -14%);
             -webkit-transform: rotate(93deg) translate(-4%, -14%);
             -moz-transform: rotate(93deg) translate(-4%, -14%);
             -ms-transform: rotate(93deg) translate(-4%, -14%);
             -o-transform: rotate(93deg) translate(-4%, -14%);
-}
+          }
         svg{
             color:#fff;
             position: relative;
@@ -60,8 +63,9 @@ aside{
         }
     }
     .closebutton{
+        background:transparent;
         opacity: 0;
-        padding:15px;
+        padding:35px;
         justify-content: space-between;
         transform: translateX(100%);
         -webkit-transform: translateX(100%);
@@ -75,16 +79,32 @@ aside{
         -o-transition: transform 0.4s cubic-bezier(0.075, 0.82, 0.165, 1) 0.2s, opacity 0.2s cubic-bezier(0.6, -0.28, 0.735, 0.045) 0.1s;
         position: absolute;
         right: 0;
-    }
-    .closebutton span{
-        margin-right:8px;
-    }
-    .closebutton svg{
-        fill:#333;
-        background:transparent;
-        flex: 0 0 auto;
-        width: 28px;
-        padding: 1px 2px 1px 5px;
+        .buttonbg{
+          position: absolute;
+          width:400px;
+          height:400px;
+          z-index: 0;
+          fill:rgb(80, 156, 232);
+          transform: rotate(193deg) translate(43%, 7%);
+          -webkit-transform: rotate(193deg) translate(43%, 7%);
+          -moz-transform: rotate(193deg) translate(43%, 7%);
+          -ms-transform: rotate(193deg) translate(43%, 7%);
+          -o-transform: rotate(193deg) translate(43%, 7%);
+        }
+        span{
+          margin-right:8px;
+          position: relative;
+          z-index: 1;
+        }
+        svg{
+          fill:rgb(22, 118, 212);
+          background:transparent;
+          flex: 0 0 auto;
+          width: 28px;
+          padding: 1px 2px 1px 5px;
+          position: relative;
+          z-index: 1;
+        }
     }
     &.showmenu{
         transform: translateX(0%);
@@ -92,18 +112,6 @@ aside{
         -moz-transform: translateX(0%);
         -ms-transform: translateX(0%);
         -o-transform: translateX(0%);
-        .openbutton{
-            // transform: translateX(100%) scale(0);
-            // -webkit-transform: translateX(100%) scale(0);
-            // -moz-transform: translateX(100%) scale(0);
-            // -ms-transform: translateX(100%) scale(0);
-            // -o-transform: translateX(100%) scale(0);
-            // opacity: 0;
-            // padding:15px;
-            // min-width: 60px;
-            // background:#333;
-            // color:#fff;
-}
         .closebutton{
             opacity: 1;
             transform: translateX(0%);

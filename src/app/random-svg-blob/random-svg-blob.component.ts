@@ -26,6 +26,7 @@ export class RandomSvgBlobComponent {
     this.angle = this.getExtraRandom();
     this.centerX = 240;
     this.centerY = 240;
+
     this.pathStyle = {
       border:'none',
       fill:'#1676d4',
@@ -33,12 +34,40 @@ export class RandomSvgBlobComponent {
       strokeWidth: 2,
       strokeDasharray: "none"
     }
-    this.resetPathData();
 
+
+    ///////// TODO. Try to generate new shap on mouse movement start,
+
+    //Init
     this.generateCurvyShape()
+    .then(()=>this.trackMouseMovement(document.querySelector('svg'),document.querySelector('svg path')))
+    //Run randomized
     setInterval(()=>{
       this.generateCurvyShape()
-    },Math.floor(Math.random() * (10000 - 4000 + 1)) + 4000);
+    },this.getRandomMilisecondsBetween());
+  }
+
+  trackMouseMovement(container: SVGSVGElement | null, element: SVGPathElement | null){
+    if(container === null || element === null) return false;
+
+    container.addEventListener('mousemove', (e: { offsetX: any; offsetY: any; }) => {
+      let mouseX = e.offsetX;
+      let mouseY = e.offsetY;
+
+      let percX = (((mouseX/10) / container.clientWidth) * 100) + '%';
+      let percY = (((mouseY/10) / container.clientHeight) * 100) + '%';
+      let percZ = (((mouseX/10) / container.clientHeight) * 100) + '%';
+      console.log(percX, percY);
+      container.style.transform = 'translate('+percX+', '+percY+')';
+      // element.setAttribute('cx', percX);
+      // element.setAttribute('cy', percY);
+      console.dir(element.style);
+    });
+    return true;
+  }
+
+  getRandomMilisecondsBetween(min = 3000,max = 10000){
+    return Math.floor(Math.random() * (max - min + 1)) + min
   }
 
   generateCoords() {
@@ -63,7 +92,6 @@ export class RandomSvgBlobComponent {
   }
 
   catmullRom2bezier() {
-
     let d = "";
     this.pathDArray.forEach((coord,index, array) => {
       let p = [];
@@ -115,13 +143,22 @@ export class RandomSvgBlobComponent {
     this.drawLinearShape();
   };
 
-  generateCurvyShape() {
-    console.log('generateCurvyShape');
+  generateCurvyShape = () => new Promise((resolve, reject) => {
+    console.log("Demo to show promise in Typescript !!");
     this.resetPathData();
     this.generateCoords();
     this.drawCurvyShape();
-
-  };
+    resolve(100);
+  });
+  // generateCurvyShape() {
+  //   new Promise(function(resolve, reject){
+  //     console.log('generateCurvyShape');
+  //     this.resetPathData();
+  //     this.generateCoords();
+  //     this.drawCurvyShape();
+  //     resolve;
+  //   }).bind(this);
+  // };
 
   randomizeStyle() {
     this.pathStyle = {
