@@ -3,6 +3,9 @@ body{
     overflow: hidden;
     font-family: montserrat;
 }
+*{
+  box-sizing: border-box;
+}
 li{
   a{
     width: 100%;
@@ -45,4 +48,8 @@ button{
     flex-direction: row;
     align-items: center;
     justify-content: space-around;
+    overflow: hidden;
 }
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

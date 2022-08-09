@@ -1,0 +1,25 @@
+input{
+  width:100%;
+  display: flex;
+  min-height: 54px;
+}
+.search-item-wrap{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.item{
+  margin:10px 10px 0 10px;
+  padding:20px;
+  width: auto;
+  min-height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.search{
+  background:rgb(139, 189, 235);
+}
+.fav{
+  background:rgb(120, 134, 148);
+}

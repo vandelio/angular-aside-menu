@@ -1,0 +1,27 @@
+<input
+  [value]="currentSearch"
+  [placeholder]="placeholder"
+  (input)="currentSearch=getValue($event)"
+  (keyup.enter)="onAddSearch(getValue($event))"
+  />
+
+  <autocomplete></autocomplete>
+
+<div class="search-item-wrap">
+  <div
+    class="item search"
+    *ngFor="let item of searchList"
+    (click)="onClickedAddFavourite(item)"
+    > {{item}}
+  </div>
+</div>
+
+<div class="favourites-wrap">
+  <div
+    class="item fav"
+    *ngFor="let item of favouritesList"
+    (click)="onClickedAddFavourite(item)"
+    > {{item}}
+  </div>
+</div>
+
